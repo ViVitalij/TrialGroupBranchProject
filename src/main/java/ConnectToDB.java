@@ -12,11 +12,15 @@ public class ConnectToDB {
         String user = "user";
         String password = "password";
         try {
+
             Connection con = DriverManager.getConnection(host, user, password);
             return con;
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        host=null;
+        user=null;
+        password=null;
         return null;
     }
 
